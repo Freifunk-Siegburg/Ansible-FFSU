@@ -1,0 +1,7 @@
+---
+ - hosts: firmware
+   remote_user: root
+   roles:
+    - { role: hostname, tags: "hostname"}
+    - { role: common, tags: "common"}
+    - { role: firmware_web, tags: "firmware_web"}

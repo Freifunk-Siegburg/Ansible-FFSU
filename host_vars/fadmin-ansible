@@ -1,0 +1,7 @@
+# ID des Servers.
+server_id: 101
+server_besitzer: "0liB"
+administratorenteam:
+  - "admin"
+  - "oliver"
+  - "claus"

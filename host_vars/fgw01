@@ -1,0 +1,64 @@
+# Variablen für Backbone-Server fgw01
+# Die Server-IP-Adresse wird durch von ansible bereitgestellte Variablen abgerufen (ansible_eth0.ipv4...)
+
+# ID des Servers.
+# Hieraus wird die IP-Adresse innerhalb des Freifunk Netzwerkes gebildet.
+server_id: 1
+vm_id: 1
+server_besitzer: "0liB"
+administratorenteam:
+  - "admin"
+  - "oliver"
+  - "claus"
+# IPv4 Adresse auf die der Datenverkehr per NAT umgestezt wird
+# Nur für Backbone-Server notwendig
+server_ipv4_nat: 185.66.193.60/32
+
+domaenenliste:
+   "01":
+      dhcp_start: 10.152.9.0
+      dhcp_ende: 10.152.11.254
+      server_id: 1
+#GRE-Einstellungen zum Freifunk Rheinland
+#Bei v6 ist die ...::1 remote und die ...::2 lokal
+ffrl_tun:
+- name: ber1 bb-a.ak.ber
+  gre_target: 185.66.195.0
+  v4_local: 100.64.9.1/31
+  v4_remote: 100.64.9.0/31
+  v6_local: 2a03:2260:0:495::2/64
+  v6_remote: 2a03:2260:0:495::1/64
+- name: ber2 bb-b.ak.ber
+  gre_target: 185.66.195.1
+  v4_local: 100.64.9.7/31
+  v4_remote: 100.64.9.6/31
+  v6_local: 2a03:2260:0:498::2/64
+  v6_remote: 2a03:2260:0:498::1/64
+- name: fra1 bb-a.fra2.fra
+  gre_target: 185.66.194.0
+  v4_local: 100.64.9.3/31
+  v4_remote: 100.64.9.2/31
+  v6_local: 2a03:2260:0:496::2/64
+  v6_remote: 2a03:2260:0:496::1/64
+- name: fra2 bb-b.fra2.fra
+  gre_target: 185.66.194.1
+  v4_local: 100.64.9.9/31
+  v4_remote: 100.64.9.8/31
+  v6_local: 2a03:2260:0:499::2/64
+  v6_remote: 2a03:2260:0:499::1/64
+- name: dus1 bb-a.ix.dus
+  gre_target: 185.66.193.0
+  v4_local: 100.64.9.5/31
+  v4_remote: 100.64.9.4/31
+  v6_local: 2a03:2260:0:497::2/64
+  v6_remote: 2a03:2260:0:497::1/64
+  bgp_local_pref: 202
+- name: dus2 bb-b.ix.dus
+  gre_target: 185.66.193.1
+  v4_local: 100.64.9.11/31
+  v4_remote: 100.64.9.10/31
+  v6_local: 2a03:2260:0:49a::2/64
+  v6_remote: 2a03:2260:0:49a::1/64
+  bgp_local_pref: 201
+
+dhcp_type: "kea"

@@ -1,0 +1,13 @@
+vm_id: 11
+server_id: 11
+server_besitzer: "0liB"
+administratorenteam:
+  - "admin"
+  - "oliver"
+  - "claus"
+bind:
+  ffsu_zone_type: master
+  ns_name: ns01
+  ffsu_for_groups:
+    - domaene-06
+#legacy_domain: yes

@@ -1,0 +1,20 @@
+# Allgemeine Infrastruktur-Server
+[common]
+buildserver ansible_ssh_host=163.172.121.254 ansible_ssh_port=2215
+services-legacy ansible_ssh_host=163.172.121.254 ansible_ssh_port=2210
+
+
+# Service-VM für Zentrale Dienste (Karte, Statistik)
+[services]
+services	ansible_ssh_host=163.172.121.254
+karteneu	ansible_ssh_host=163.172.121.254
+
+[gateways]
+# Gateways mit oder ohne Direktanbindung FFRL
+# Immer mit Multidomänen-L2TP
+fgw01		ansible_ssh_host=195.154.50.250	ansible_ssh_port=22 # Direktanbindung FFRL
+fgw02		ansible_ssh_host=163.172.126.252	ansible_ssh_port=22
+
+# Sonstige Server
+[firmware]
+firmware	ansible_ssh_host=163.172.121.254 ansible_ssh_port=52120

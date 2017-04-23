@@ -1,0 +1,8 @@
+server_id: 10
+vm_id: 10
+server_besitzer: "0liB"
+
+administratorenteam:
+  - "admin"
+  - "oliver"
+  - "claus"

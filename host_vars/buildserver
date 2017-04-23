@@ -1,0 +1,9 @@
+
+# Variablen für Server
+vm_id: 120
+id: 120
+server_besitzer: "0liB"
+administratorenteam:
+  - "admin"
+  - "oliver"
+  - "claus"

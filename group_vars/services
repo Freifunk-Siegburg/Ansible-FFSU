@@ -1,0 +1,17 @@
+# Variablen für die Host-Gruppe services
+prune_days: 60
+
+# Collectd Konfiguration
+collectd:
+  collect_dhcp: false
+  collect_fastd: false
+  collect_l2tp: false
+  collect_ipv4ipv6: false
+  collect_sysctl: false
+  collect_bind: true
+  collect_ping: false
+
+administratorenteam:
+  - "admin"
+  - "oliver"
+  - "claus"
