@@ -1,10 +1,16 @@
+# Variablen für Backbone-Server fgw01
+# Die Server-IP-Adresse wird durch von ansible bereitgestellte Variablen abgerufen (ansible_eth0.ipv4...)
+
+# ID des Servers.
+# Hieraus wird die IP-Adresse innerhalb des Freifunk Netzwerkes gebildet.
+server_id: 2
 vm_id: 2
 server_besitzer: "0liB"
 
 domaenenliste:
    "01":
       dhcp_start: 10.152.12.0
-      dhcp_ende: 10.43.15.254
+      dhcp_ende: 10.152.15.254
       server_id: 2
 administratorenteam:
   - "admin"

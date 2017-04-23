@@ -19,41 +19,46 @@ domaenenliste:
       dhcp_start: 10.152.9.0
       dhcp_ende: 10.152.11.254
       server_id: 1
+
+#GRE-Einstellungen FFSU Backbone-Server
+ffms_tun_to:
+- host_name: fgw02
+
 #GRE-Einstellungen zum Freifunk Rheinland
 #Bei v6 ist die ...::1 remote und die ...::2 lokal
 ffrl_tun:
-- name: ber1 bb-a.ak.ber
+- name: ber1
   gre_target: 185.66.195.0
   v4_local: 100.64.9.1/31
   v4_remote: 100.64.9.0/31
   v6_local: 2a03:2260:0:495::2/64
   v6_remote: 2a03:2260:0:495::1/64
-- name: ber2 bb-b.ak.ber
+- name: ber2
   gre_target: 185.66.195.1
   v4_local: 100.64.9.7/31
   v4_remote: 100.64.9.6/31
   v6_local: 2a03:2260:0:498::2/64
   v6_remote: 2a03:2260:0:498::1/64
-- name: fra1 bb-a.fra2.fra
+- name: fra1
   gre_target: 185.66.194.0
   v4_local: 100.64.9.3/31
   v4_remote: 100.64.9.2/31
   v6_local: 2a03:2260:0:496::2/64
   v6_remote: 2a03:2260:0:496::1/64
-- name: fra2 bb-b.fra2.fra
+- name: fra2
   gre_target: 185.66.194.1
   v4_local: 100.64.9.9/31
   v4_remote: 100.64.9.8/31
   v6_local: 2a03:2260:0:499::2/64
   v6_remote: 2a03:2260:0:499::1/64
-- name: dus1 bb-a.ix.dus
+- name: dus1
   gre_target: 185.66.193.0
   v4_local: 100.64.9.5/31
   v4_remote: 100.64.9.4/31
   v6_local: 2a03:2260:0:497::2/64
   v6_remote: 2a03:2260:0:497::1/64
   bgp_local_pref: 202
-- name: dus2 bb-b.ix.dus
+- name: dus2
   gre_target: 185.66.193.1
   v4_local: 100.64.9.11/31
   v4_remote: 100.64.9.10/31

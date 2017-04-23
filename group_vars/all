@@ -38,9 +38,9 @@ ff_network:
   # IPv4 Adressraum
   v4_network: 10.152.0.0/18
   # IPv6 adressraum
-  v6_network: fda4:1721:8450::/48
+  v6_network: 2a03:2260:3017::/48
 
-hostname_suffix: ".server.freifunk-siegburg.de"
+hostname_suffix: ".freifunk-siegburg.de"
 
 administratorenteam:
   - "admin"
@@ -69,9 +69,14 @@ logrotate:
 freifunk:
   name: "Freifunk Siegburg"
   kurzname: "ffsu"
+  search_domain: "ffsu"
   email: kontakt@freifunk-siegburg.de
   domain: freifunk-siegburg.de
-
+  ffnet_dns_entries_for_internal_tld:
+    "firmware":
+      A: 195.154.50.250
+      AAAA: 2a03:2260:3017:100::2
+         
 bind_zonemaster:
   server: service.freifunk-siegburg.de
   email: kontakt.freifunk-siegburg.de
